@@ -2,11 +2,429 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>网页布局之Flex 布局</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>
-    hello world
+<div class="content">
+    <header class="header">
+        <div class="about-flex">
+            <h3>Flex 布局教程：实例篇</h3>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="container-attr">
+            <h3>一、骰子的布局</h3>
+            <p>骰子的一面，最多可以放置9个点。</p>
+            <p>下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。</p>
+            <h4>1.1 单项目</h4>
+            <p>首先，只有左上角1个点的情况。Flex布局默认就是首行左对齐，所以一行代码就够了。</p>
+            <div class="area">
+                <div class="demo">
+                    <div class="box">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                           display: flex;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <p>设置项目的对齐方式，就能实现居中对齐和右对齐。</p>
+            <div class="area">
+                <div class="demo">
+                    <div class="box line-center">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <div class="area">
+                <div class="demo">
+                    <div class="box line-right">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <p>设置交叉轴对齐方式，可以垂直移动主轴。</p>
+            <div class="area">
+                <div class="demo">
+                    <div class="box align-center">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                            display: flex;
+                            align-items: center;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box center-center">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box center-end">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           justify-content: center;
+                           align-items: flex-end;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box end-end">
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           justify-content: flex-end;
+                           align-items: flex-end;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <h4>1.2 双项目</h4>
+            <div class="area">
+                <div class="demo">
+                    <div class="box space-between">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           justify-content: space-between;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box column-space-between">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           flex-direction: column;
+                           justify-content: space-between;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box column-space-between-center">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           flex-direction: column;
+                           justify-content: space-between;
+                           align-items: center;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box column-space-between-end">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                           display: flex;
+                           flex-direction: column;
+                           justify-content: space-between;
+                           align-items: flex-end;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box align-self-center">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                           display: flex;
+                        }
+                        .item:nth-child(2) {
+                            align-self: center;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box align-self-end">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                           display: flex;
+                           justify-content: space-between;
+                        }
+                        .item:nth-child(2) {
+                            align-self: flex-end;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <h4>1.3 三项目</h4>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box align-self-center-end">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                           display: flex;
+                           justify-content: space-between;
+                        }
+                        .item:nth-child(2) {
+                            align-self: flex-end;
+                        }
+                        .item:nth-child(3) {
+                            align-self: flex-end;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <h4>1.4 四项目</h4>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box four-wrap-end">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-end;
+                        align-content: space-between;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box four-column">
+                        <div class="column">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                        <div class="column">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-end;
+                        align-content: space-between;
+                        }
+                    </pre>
+                </div>
+            </div>
+            <h4>1.5 六项目</h4>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box six-wrap">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-content: space-between;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box six-wrap-column">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        align-content: space-between;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box six-row">
+                        <div class="row">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                        <div class="row">
+                            <div class="item"></div>
+                        </div>
+                        <div class="row">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                        .box {
+                        display: flex;
+                        flex-wrap: wrap;
+                        }
+                        .row{
+                        flex-basis: 100%;
+                        display:flex;
+                        }
+                        .row:nth-child(2){justify-content: center;}
+                        .row:nth-child(3){justify-content: space-between;}
+                    </pre>
+                </div>
+            </div>
+            <h4>1.6 九项目</h4>
+
+            <div class="area">
+                <div class="demo">
+                    <div class="box nine-wrap">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre>
+                      .box {
+                        display: flex;
+                        flex-wrap: wrap;
+                        }
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer">
+
+    </footer>
 </div>
 </body>
 </html>
