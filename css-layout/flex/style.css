@@ -176,3 +176,36 @@ h3,h4{
 .nine-wrap{
     flex-wrap: wrap;
 }
+/*网格布局*/
+.Grid {
+    display: flex;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.Grid-cell {
+    flex: 1;
+    background: #eee;
+    border: 1px solid #fff;
+    margin: 5px 10px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 40px;
+}
+.Grid-cell.u-full {
+    flex: 0 0 100%;
+    margin: 0;
+}
+
+.Grid-cell.u-1of2 {
+    flex: 0 0 50%;
+}
+
+.Grid-cell.u-1of3 {
+    flex: 0 0 33.3333%;
+}
+
+.Grid-cell.u-1of4 {
+    flex: 0 0 25%;
+}
