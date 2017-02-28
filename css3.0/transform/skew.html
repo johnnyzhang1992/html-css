@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform之skew</title>
+    <style>
+        body{
+            padding: 50px;
+        }
+        div.div_skew
+        {
+            margin:30px;
+            padding: 20px;
+            width:180px;
+            float: left;
+            height:100px;
+            background-color:yellow;
+        }
+        .skew_30{
+            transform:skew(30deg);
+            -ms-transform:skew(30deg); /* Internet Explorer */
+            -moz-transform:skew(30deg); /* Firefox */
+            -webkit-transform:skew(30deg); /* Safari 和 Chrome */
+            -o-transform:skew(30deg); /* Opera */
+        }
+        .skew_60{
+            transform:skew(60deg);
+            -ms-transform:skew(60deg); /* Internet Explorer */
+            -moz-transform:skew(60deg); /* Firefox */
+            -webkit-transform:skew(60deg); /* Safari 和 Chrome */
+            -o-transform:skew(60deg); /* Opera */
+        }
+        .skew_180{
+            transform:skew(180deg);
+            -ms-transform:skew(180deg); /* Internet Explorer */
+            -moz-transform:skew(180deg); /* Firefox */
+            -webkit-transform:skew(180deg); /* Safari 和 Chrome */
+            -o-transform:skew(180deg); /* Opera */
+        }
+        .skew_210{
+            transform:skew(210deg);
+            -ms-transform:skew(210deg); /* Internet Explorer */
+            -moz-transform:skew(210deg); /* Firefox */
+            -webkit-transform:skew(210deg); /* Safari 和 Chrome */
+            -o-transform:skew(210deg); /* Opera */
+        }
+        .skew_360{
+            transform:skew(360deg);
+            -ms-transform:skew(360deg); /* Internet Explorer */
+            -moz-transform:skew(360deg); /* Firefox */
+            -webkit-transform:skew(360deg); /* Safari 和 Chrome */
+            -o-transform:skew(360deg); /* Opera */
+        }
+    </style>
+</head>
+<body>
+<p>transform:skew()：含义：倾斜；</p>
+<div class="div_skew skew_30">
+    skew(30deg);<br>
+    倾斜30度
+</div>
+<div class="div_skew skew_60">
+    skew(60deg);<br>
+    倾斜60度
+</div>
+<div class="div_skew skew_180">
+    skew(180deg);<br>
+    倾斜180度
+</div>
+<div class="div_skew skew_210">
+    skew(210deg);<br>
+    倾斜210度
+</div>
+<div class="div_skew skew_360">
+    skew(360deg);<br>
+    倾斜360度
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3.0之Transform</title>
+    <style>
+        body{
+            padding: 50px;
+        }
+        div.div_transform,.div_input
+        {
+            margin:0 auto;
+            padding: 20px;
+            width:200px;
+            height:200px;
+            background-color:yellow;
+        }
+        .left,.right{
+            width: 50%;
+            float: left;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+    <div class="div_transform">
+        <p class="transform">旋转角度 <span class="transform_deg">30deg</span></p>
+        <p class="skew" data-skew="30deg">倾斜角度：<span class="skew_deg">30deg</span></p>
+    </div>
+</div>
+<div class="right">
+    <div class="div_input">
+        <label for="transform">transform-deg：</label>
+        <input type="text" id="transform">
+    </div>
+</div>
+<script src="jquery-2.1.4.min.js"></script>
+<script>
+    $('#transform').change(function () {
+        var trans_deg = $(this).val();
+        console.info(trans_deg);
+        var transform_deg = 'rotate('+trans_deg+')';
+        $('.div_transform').css({
+            "transform":transform_deg,
+        "-ms-transform":transform_deg,
+        "-moz-transform":transform_deg,
+        "-webkit-transform":transform_deg,
+        "-o-transform":transform_deg
+        })
+    });
+
+</script>
+</body>
+</html>
