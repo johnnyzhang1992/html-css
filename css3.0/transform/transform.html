@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3.0新属性之transform</title>
+    <style>
+        body{
+            padding: 50px;
+        }
+        div.div_transform
+        {
+            margin:30px;
+            padding: 20px;
+            width:180px;
+            float: left;
+            height:100px;
+            background-color:yellow;
+        }
+        .transform_30{
+            /* Rotate div */
+            transform:rotate(30deg);
+            -ms-transform:rotate(30deg); /* Internet Explorer */
+            -moz-transform:rotate(30deg); /* Firefox */
+            -webkit-transform:rotate(30deg); /* Safari 和 Chrome */
+            -o-transform:rotate(30deg); /* Opera */
+        }
+        .transform_90{
+            /* Rotate div */
+            transform:rotate(90deg);
+            -ms-transform:rotate(90deg); /* Internet Explorer */
+            -moz-transform:rotate(90deg); /* Firefox */
+            -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+            -o-transform:rotate(90deg); /* Opera*/
+        }
+        .transform_180{
+            /* Rotate div */
+            transform:rotate(180deg);
+            -ms-transform:rotate(180deg); /* Internet Explorer */
+            -moz-transform:rotate(180deg); /* Firefox */
+            -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+            -o-transform:rotate(180deg); /* Opera*/
+        }
+        .transform_270{
+            /* Rotate div */
+            transform:rotate(270deg);
+            -ms-transform:rotate(270deg); /* Internet Explorer */
+            -moz-transform:rotate(270deg); /* Firefox */
+            -webkit-transform:rotate(270deg); /* Safari 和 Chrome */
+            -o-transform:rotate(270deg); /* Opera*/
+        }
+        .transform_360{
+            /* Rotate div */
+            transform:rotate(360deg);
+            -ms-transform:rotate(360deg); /* Internet Explorer */
+            -moz-transform:rotate(360deg); /* Firefox */
+            -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+            -o-transform:rotate(360deg); /* Opera*/
+        }
+    </style>
+</head>
+<body>
+<p>transform的属性包括：rotate() / skew() / scale() / translate(,) ，分别还有x、y之分，比如：rotatex() 和 rotatey() ，以此类推。</p>
+<p>transform:rotate()：含义：旋转；其中“deg”是“度”的意思，如“10deg”表示“10度”下同。</p>
+<pre>
+    div.transform{
+           transform:rotate(9deg);
+            -ms-transform:rotate(9deg); /* Internet Explorer */
+            -moz-transform:rotate(9deg); /* Firefox */
+            -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+            -o-transform:rotate(9deg); /* Opera */
+    }
+</pre>
+<div class="div_transform transform_30">
+    <p>transform:rotate(30deg)</p>
+    <p>倾斜30度</p>
+</div>
+<div class="div_transform transform_90">
+    <p>transform:rotate(90deg)</p>
+    <p>倾斜90度</p>
+</div>
+<div class="div_transform transform_180">
+    <p>transform:rotate(180deg)</p>
+    <p>倾斜180度</p>
+</div>
+<div class="div_transform transform_270">
+    <p>transform:rotate(270deg)</p>
+    <p>倾斜270度</p>
+</div>
+<div class="div_transform transform_360">
+    <p>transform:rotate(360deg)</p>
+    <p>倾斜360度</p>
+</div>
+
+</body>
+</html>
