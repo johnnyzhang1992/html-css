@@ -33,6 +33,14 @@
         pre{
             display: none;
         }
+        .transform_now{
+            background: #42ce7b;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 6px 35px;
+            margin: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -97,21 +105,22 @@
     <div class="div_input">
         <div class="input-transform">
             <label for="transform">transform-deg：</label>
-            <input type="text" id="transform">
+            <input type="text" id="transform" placeholder="0">
         </div>
         <div class="input-skew">
             <label for="skew">skew-deg:</label>
-            <input type="text" id="skew">
+            <input type="text" id="skew" placeholder="0">
         </div>
         <div class="input-scale">
             <label for="scale">scale:</label>
-            <input type="text" id="scale">
+            <input type="text" id="scale" placeholder="1.0">
         </div>
         <div class="input-translate">
             <label for="translate-x" style="width: 95%">translate:</label><br>
-            x: <input type="text" id="translate-x">
-            y: <input type="text" id="translate-y">
+            x: <input type="text" id="translate-x" placeholder="0">
+            y: <input type="text" id="translate-y" placeholder="0">
         </div>
+        <button class="transform_now">预览</button>
     </div>
 </div>
 <script src="jquery-2.1.4.min.js"></script>
@@ -151,7 +160,21 @@
         });
         $('.scale').html(scale);
     });
-
+    $('.transform_now').click(function () {
+        var trans_deg = $('#transform').val();
+        var skew_deg = $('#skew').val();
+        var scale = $('#scale').val();
+        var translate_x = $('#translate-x').val();
+        var translate_y = $('#translate-y').val();
+        var transform = 'rotate('+trans_deg+'deg)'+' '+'skew('+skew_deg+'deg)'+' '+'scale('+scale+')'+' '+'translate('+translate_x+'px,'+translate_y+'px)';
+        $('.div_transform').css({
+            "transform":transform,
+            "-ms-transform":transform,
+            "-moz-transform":transform,
+            "-webkit-transform":transform,
+            "-o-transform":transform
+        });
+    })
 </script>
 </body>
 </html>
