@@ -21,34 +21,135 @@
             text-align: center;
             margin: 0 auto;
         }
+        label{
+            width: 130px;
+            text-align: left;
+            display: inline-block;
+        }
+        input{
+            display: inline-block;
+            width: 50px;
+        }
+        pre{
+            display: none;
+        }
     </style>
 </head>
 <body>
+<p>transform的属性包括：rotate() / skew() / scale() / translate(,) ，分别还有x、y之分，比如：rotatex() 和 rotatey() ，以此类推。</p>
+<p>transform:rotate()：含义：旋转；其中“deg”是“度”的意思，如“10deg”表示“10度”下同。</p>
+<pre>
+    div.transform{
+           transform:rotate(9deg);
+            -ms-transform:rotate(9deg); /* Internet Explorer */
+            -moz-transform:rotate(9deg); /* Firefox */
+            -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+            -o-transform:rotate(9deg); /* Opera */
+    }
+</pre>
+<p>transform:skew()：含义：倾斜；</p>
+<pre>
+       .skew_30{
+            transform:skew(30deg);
+            -ms-transform:skew(30deg); /* Internet Explorer */
+            -moz-transform:skew(30deg); /* Firefox */
+            -webkit-transform:skew(30deg); /* Safari 和 Chrome */
+            -o-transform:skew(30deg); /* Opera */
+        }
+</pre>
+<p>
+    transform:scale()：
+
+    含义：比例；“1.5”表示以1.5的比例放大，如果要放大2倍，须写成“2.0”，缩小则为负“-”。
+</p>
+<pre>
+            .div_scale{
+            transform:scale(1.5);
+            -ms-transform:scale(1.5); /* Internet Explorer */
+            -webkit-transform:scale(1.5);
+            -moz-transform:scale(1.5);
+            -o-transform:scale(1.5); /* Opera */
+        }
+</pre>
+<p>
+    transform:translate()：
+
+    含义：变动，位移；如下表示向右位移120像素，如果向上位移，把后面的“0”改个值就行，向左向下位移则为负“-”。
+</p>
+<pre>
+            .div_translate{
+            transform:translate(120px,0);
+            -ms-transform:translate(120px,0); /* Internet Explorer */
+            -moz-transform:translate(120px,0); /* Firefox */
+            -webkit-transform:translate(120px,0); /* Safari 和 Chrome */
+            -o-transform:translate(120px,0); /* Opera */
+        }
+</pre>
 <div class="left">
     <div class="div_transform">
-        <p class="transform">旋转角度 <span class="transform_deg">30deg</span></p>
-        <p class="skew" data-skew="30deg">倾斜角度：<span class="skew_deg">30deg</span></p>
+        <p class="transform">旋转角度 <span class="transform_deg">0</span>deg</p>
+        <p class="skew" data-skew="30deg">倾斜角度：<span class="skew_deg">0</span>deg</p>
+        <p class="scale">缩放比例：<span class="scale">1.0</span></p>
+        <p class="translate">变动位移：<span class="translate">120px,0</span></p>
     </div>
 </div>
 <div class="right">
     <div class="div_input">
-        <label for="transform">transform-deg：</label>
-        <input type="text" id="transform">
+        <div class="input-transform">
+            <label for="transform">transform-deg：</label>
+            <input type="text" id="transform">
+        </div>
+        <div class="input-skew">
+            <label for="skew">skew-deg:</label>
+            <input type="text" id="skew">
+        </div>
+        <div class="input-scale">
+            <label for="scale">scale:</label>
+            <input type="text" id="scale">
+        </div>
+        <div class="input-translate">
+            <label for="translate-x" style="width: 95%">translate:</label><br>
+            x: <input type="text" id="translate-x">
+            y: <input type="text" id="translate-y">
+        </div>
     </div>
 </div>
 <script src="jquery-2.1.4.min.js"></script>
 <script>
     $('#transform').change(function () {
         var trans_deg = $(this).val();
-        console.info(trans_deg);
-        var transform_deg = 'rotate('+trans_deg+')';
+        var transform_deg = 'rotate('+trans_deg+'deg)';
         $('.div_transform').css({
             "transform":transform_deg,
         "-ms-transform":transform_deg,
         "-moz-transform":transform_deg,
         "-webkit-transform":transform_deg,
         "-o-transform":transform_deg
-        })
+        });
+        $('.transform_deg').html(trans_deg);
+    });
+    $('#skew').change(function () {
+        var sk_deg = $(this).val();
+        var skew_deg = 'skew('+sk_deg+'deg)';
+        $('.div_transform').css({
+            "transform":skew_deg,
+            "-ms-transform":skew_deg,
+            "-moz-transform":skew_deg,
+            "-webkit-transform":skew_deg,
+            "-o-transform":skew_deg
+        });
+        $('.skew_deg').html(sk_deg);
+    });
+    $('#scale').change(function () {
+        var scale = 'scale('+$(this).val()+')';
+        $('.div_transform').css({
+            "transform":scale,
+            "-ms-transform":scale,
+            "-moz-transform":scale,
+            "-webkit-transform":scale,
+            "-o-transform":scale
+        });
+        $('.scale').html(scale);
     });
 
 </script>
