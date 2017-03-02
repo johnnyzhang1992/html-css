@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3-3D 转换</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .rotateX{
+            transform: rotateX(120deg);
+            -webkit-transform: rotateX(120deg);	/* Safari 和 Chrome */
+            -moz-transform: rotateX(120deg);	/* Firefox */
+        }
+        .rotateY{
+            transform: rotateY(130deg);
+            -webkit-transform: rotateY(130deg);	/* Safari 和 Chrome */
+            -moz-transform: rotateY(130deg);	/* Firefox */
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="text-center">CSS3 3D 转换</h2>
+    <h3 class="text-left">浏览器支持</h3>
+    <p>
+        Internet Explorer 10 和 Firefox 支持 3D 转换。<br>
+        Chrome 和 Safari 需要前缀 -webkit-。<br>
+        Opera 仍然不支持 3D 转换（它只支持 2D 转换）。
+    </p>
+    <h3 class="text-left">rotateX() 方法</h3>
+    <p class="text-left">通过 rotateX() 方法，元素围绕其 X 轴以给定的度数进行旋转。</p>
+    <pre>
+        div{
+        transform: rotateX(120deg);
+        -webkit-transform: rotateX(120deg);	/* Safari 和 Chrome */
+        -moz-transform: rotateX(120deg);	/* Firefox */
+        }
+    </pre>
+
+    <h3 class="text-left">rotateY() 旋转</h3>
+    <p class="text-left">通过 rotateY() 方法，元素围绕其 Y 轴以给定的度数进行旋转。</p>
+    <pre>
+       div{
+        transform: rotateY(120deg);
+        -webkit-transform: rotateY(120deg);	/* Safari 和 Chrome */
+        -moz-transform: rotateY(120deg);	/* Firefox */
+        }
+    </pre>
+    <div class="width-250 bg-yellow rotateX">
+        rotateX
+    </div>
+    <div class="width-250 bg-yellow rotateY">
+        rotateY
+    </div>
+</div>
+</body>
+</html>
