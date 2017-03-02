@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 过渡</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .content{
+            position: relative;
+        }
+        .animated_div {
+            width: 65px;
+            height: 40px;
+            background: #92B901;
+            color: #ffffff;
+            position: absolute;
+            font-weight: bold;
+            font: 12px '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+            padding: 20px 10px 0px 10px;
+            float: left;
+            margin: 5px;
+            transition-property: width,height,transform,background,font-size,opacity;
+            transition-duration: 1s,1s,1s,1s,1s,1s;
+            transition-timing-function: linear;
+            transition-delay: 2s;
+            /* Safari 和 Chrome */
+            -webkit-transition: -webkit-transform 1s,opacity 1s,background 1s,width 1s,height 1s,font-size 1s;
+            /* Opera */
+            -o-transition-property: width,height,-o-transform,background,font-size,opacity;
+            -o-transition-duration: 1s,1s,1s,1s,1s,1s;
+            /* Firefox 4 */
+            -moz-transition-property: width,height,-o-transform,background,font-size,opacity;
+            -moz-transition-duration: 1s,1s,1s,1s,1s,1s;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            opacity: 0.4;
+        }
+        .animated_div:hover {
+            -moz-transform: rotate(360deg) translate(100px,0);
+            -webkit-transform: rotate(360deg) translate(100px,0);
+            -o-transform: rotate(360deg) translate(100px,0);
+            transform: rotate(360deg) translate(100px,0);
+            opacity: 1;
+            background: #1ec7e6;
+            width: 90px;
+            height: 60px;
+            font-size: 16px;
+        }
+        .animated_div1{
+            width: 50px;
+            height: 50px;
+            background: #92B901;
+            color: #ffffff;
+            position: absolute;
+            left:200px;
+            font-weight: bold;
+            font: 12px '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+            float: left;
+            margin: 5px;
+            transition-property: transform;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+            transition-delay: 1s;
+            /* Safari 和 Chrome */
+            -webkit-transition: -webkit-transform 1s;
+            /* Opera */
+            -o-transition-property: -o-transform;
+            -o-transition-duration: 1s;
+            /* Firefox 4 */
+            -moz-transition-property: -o-transform;
+            -moz-transition-duration: 1s;
+        }
+        .animated_div1:hover{
+            border:1px solid #ff00bb;
+            -moz-transform:  translate(300px,0) scale(1.5);
+            -webkit-transform:  translate(300px,0) scale(1.5);
+            -o-transform:  translate(300px,0) scale(1.5);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="text-center">CSS3 过渡-transition</h2>
+    <h3 class="text-left">浏览器支持</h3>
+    <p>
+        Internet Explorer 10、Firefox、Chrome 以及 Opera 支持 transition 属性。<br>
+        Safari 需要前缀 -webkit-。<br>
+        注释：Internet Explorer 9 以及更早的版本，不支持 transition 属性。<br>
+        注释：Chrome 25 以及更早的版本，需要前缀 -webkit-。<br>
+    </p>
+    <h3 class="text-left">它如何工作？</h3>
+    <p>
+        CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。<br>
+        要实现这一点，必须规定两项内容：<br>
+        规定您希望把效果添加到哪个 CSS 属性上 <br>
+        规定效果的时长 <br>
+    </p>
+    <h3 class="text-left">多项改变</h3>
+    <p>
+        如需向多个样式添加过渡效果，请添加多个属性，由逗号隔开：
+    </p>
+    <h3 class="text-left">例子1：</h3>
+    <p class="animated_div">CSS3 过渡</p>
+    <p class="animated_div1">
+        <img src="x2.jpg" alt="" style="width: 50px;height:50px">
+    </p>
+</div>
+</body>
+</html>
