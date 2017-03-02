@@ -98,7 +98,7 @@
         <p class="transform">旋转角度 <span class="transform_deg">0</span>deg</p>
         <p class="skew" data-skew="30deg">倾斜角度：<span class="skew_deg">0</span>deg</p>
         <p class="scale">缩放比例：<span class="scale">1.0</span></p>
-        <p class="translate">变动位移：<span class="translate">120px,0</span></p>
+        <p class="translate">变动位移：<span class="translate-x">0</span>px<span class="translate-y">0</span>px</p>
     </div>
 </div>
 <div class="right">
@@ -174,6 +174,8 @@
             "-webkit-transform":transform,
             "-o-transform":transform
         });
+        $('.translate-x').html(translate_x);
+        $('.translate-y').html(translate_y);
     })
 </script>
 </body>
