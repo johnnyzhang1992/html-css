@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3.0之文本效果</title>
+    <style>
+        .content{
+            width:80%;
+            margin: 0 auto;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .text-left{
+            text-align: left;
+        }
+        .t-shadow {
+            text-shadow: 5px 5px 5px #FF0000;
+        }
+        .width-250{
+            width: 250px;
+            padding: 20px;
+            float: left;
+            margin: 20px;
+        }
+        .border{
+            border: 1px solid #eee;
+        }
+        pre{
+            padding: 0 15px;
+            line-height: 30px;
+            background: #f5f5f5;
+            border: 1px dotted #785;
+        }
+        .word-wrap{
+            word-wrap:break-word;
+        }
+        .red{
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="text-center">CSS3 文本效果</h2>
+    <h3 class="text-left">CSS3 文本阴影：您能够规定水平阴影、垂直阴影、模糊距离，以及阴影的颜色：</h3>
+    <pre>text-shadow: 5px 5px 5px #FF0000;</pre>
+    <span class="t-shadow">文本阴影效果</span>
+    <h3 class="text-left">CSS3 自动换行</h3>
+    <pre>p {word-wrap:break-word;}</pre>
+    <p class="text-left">语法</p>
+    <pre>word-wrap: normal|break-word;</pre>
+    <div class="width-250 border">
+        <p class="red">no </p>
+        <p>
+            This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword.
+            The long word will break and wrap to the next line.
+        </p>
+    </div>
+    <div class="width-250 border word-wrap">
+        <p class="red">word-wrap:break-word</p>
+        <p>
+            This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword.
+            The long word will break and wrap to the next line.
+        </p>
+    </div>
+</div>
+</body>
+</html>
