@@ -19,6 +19,13 @@
     float: left;
     margin: 20px;
 }
+.width-100{
+    width: 100px;
+    height:100px;
+    padding: 20px;
+    float: left;
+    margin: 20px;
+}
 pre{
     padding: 0 15px;
     line-height: 30px;

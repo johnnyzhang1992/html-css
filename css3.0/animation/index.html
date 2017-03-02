@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 动画</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        @keyframes move_to_right {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+                background: #43ce7b;
+            }
+            50% {
+                transform: rotate(180deg);
+                background: #ff00bb;
+            }
+            55% {
+                transform: rotate(270deg);
+                background: #0f7595;
+            }
+            70% {
+                transform: rotate(360deg);
+                background: #0000AA;
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @-moz-keyframes move_to_right /* Firefox */  {
+
+        }
+
+        @-webkit-keyframes move_to_right /* Safari 和 Chrome */  {
+
+        }
+
+        @-o-keyframes move_to_right /* Opera */  {
+
+        }
+        .div_animation{
+            border-radius: 50%;
+            position: relative;
+        }
+        .div_animation span{
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top:-11px ;
+            margin-left:-16px ;
+        }
+        .div_animation:hover{
+            animation:move_to_right 5s;
+            -moz-animation:move_to_right 5s; /* Firefox */
+            -webkit-animation:move_to_right 5s; /* Safari and Chrome */
+            -o-animation:move_to_right 5s; /* Opera */
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="text-center">CSS3 动画</h2>
+    <h3 class="text-left">CSS3 @keyframes 规则</h3>
+    <p>
+        如需在 CSS3 中创建动画，您需要学习 @keyframes 规则。<br>
+        @keyframes 规则用于创建动画。在 @keyframes 中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果。
+    </p>
+    <h3 class="text-left">浏览器支持</h3>
+    <p>
+        Internet Explorer 10、Firefox 以及 Opera 支持 @keyframes 规则和 animation 属性。 <br>
+        Chrome 和 Safari 需要前缀 -webkit-。 <br>
+        注释：Internet Explorer 9，以及更早的版本，不支持 @keyframe 规则或 animation 属性。
+    </p>
+    <h3 class="text-left">什么是 CSS3 中的动画？</h3>
+    <p>
+        动画是使元素从一种样式逐渐变化为另一种样式的效果。<br>
+        您可以改变任意多的样式任意多的次数。 <br>
+        请用百分比来规定变化发生的时间，或用关键词 "from" 和 "to"，等同于 0% 和 100%。 <br>
+        0% 是动画的开始，100% 是动画的完成。<br>
+        为了得到最佳的浏览器支持，您应该始终定义 0% 和 100% 选择器。
+    </p>
+    <h3 class="text-left ">例子：</h3>
+    <div class="width-100 bg-yellow div_animation">
+        <span>转圈</span>
+    </div>
+    <h3 class="text-left" style="margin-top: 200px">css:</h3>
+    <pre>
+
+        @keyframes move_to_right {
+          0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+                background: #43ce7b;
+            }
+            50% {
+                transform: rotate(180deg);
+                background: #ff00bb;
+            }
+            55% {
+                transform: rotate(270deg);
+                background: #0f7595;
+            }
+            70% {
+                transform: rotate(360deg);
+                background: #0000AA;
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+        .div_animation:hover{
+            animation:move_to_right 5s;
+            -moz-animation:move_to_right 5s; /* Firefox */
+            -webkit-animation:move_to_right 5s; /* Safari and Chrome */
+            -o-animation:move_to_right 5s; /* Opera */
+        }
+    </pre>
+</div>
+</body>
+</html>
