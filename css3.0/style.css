@@ -1,0 +1,28 @@
+.content{
+    width:80%;
+    margin: 0 auto;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.border{
+    border: 1px solid #eee;
+}
+.width-250{
+    width: 250px;
+    padding: 20px;
+    float: left;
+    margin: 20px;
+}
+pre{
+    padding: 0 15px;
+    line-height: 30px;
+    background: #f5f5f5;
+    border: 1px dotted #785;
+}
+.red{
+    color: #ff0000;
+}
