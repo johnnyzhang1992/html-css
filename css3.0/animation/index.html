@@ -45,14 +45,13 @@
             border-radius: 50%;
             position: relative;
         }
-        .div_animation span{
-            position: absolute;
-            top:50%;
-            left:50%;
-            margin-top:-11px ;
-            margin-left:-16px ;
+        .div_animation img{
+            width: 100px;
+            height:100px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
         }
-        .div_animation:hover{
+        .div_animation{
             animation-name: move_to_right;/*规定 @keyframes 动画的名称。*/
             animation-duration: 5s;/*规定动画完成一个周期所花费的秒或毫秒。默认是 0。*/
             animation-timing-function: linear;/*规定动画的速度曲线。默认是 "ease"。*/
@@ -88,6 +87,185 @@
             -o-animation-direction: alternate;
             -o-animation-play-state: running;
         }
+        @keyframes move_circle {
+            0%{
+                -webkit-transform: translate(150px,0);
+                -moz-transform: translate(150px,0);
+                -ms-transform: translate(150px,0);
+                -o-transform:translate(150px,0) ;
+                transform: translate(150px,0);
+            }
+            25%{
+                -webkit-transform: translate(0,150px);
+                -moz-transform: translate(0,150px);
+                -ms-transform: translate(0,150px);
+                -o-transform:translate(0,150px) ;
+                transform: translate(0,150px);
+            }
+            50%{
+                -webkit-transform: translate(-150px,0);
+                -moz-transform: translate(-150px,0);
+                -ms-transform: translate(-150px,0);
+                -o-transform:translate(-150px,0) ;
+                transform: translate(-150px,0);
+            }
+            100%{
+                -webkit-transform: translate(0,-150px);
+                -moz-transform: translate(0,-150px);
+                -ms-transform: translate(0,-150px);
+                -o-transform:translate(0,-150px) ;
+                transform: translate(0,-150px);
+            }
+        }
+        .div_animation1{
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            animation-name: move_circle;/*规定 @keyframes 动画的名称。*/
+            animation-duration: 5s;/*规定动画完成一个周期所花费的秒或毫秒。默认是 0。*/
+            animation-timing-function: linear;/*规定动画的速度曲线。默认是 "ease"。*/
+            animation-delay: 0s;/*规定动画何时开始。默认是 0。*/
+            animation-iteration-count: infinite;/*规定动画被播放的次数。默认是 1。*/
+            animation-direction: alternate;
+            animation-play-state: running;/*规定动画是否正在运行或暂停。默认是 "running"。*/
+            /* Firefox: */
+            -moz-animation-name: move_circle;
+            -moz-animation-duration: 5s;
+            -moz-animation-timing-function: linear;
+            -moz-animation-delay: 0s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-direction: alternate;
+            -moz-animation-play-state: running;
+            /* Safari 和 Chrome: */
+            -webkit-animation-name: move_circle;
+            -webkit-animation-duration: 5s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-delay: 0s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            -webkit-animation-play-state: running;
+            /* Opera: */
+            -o-animation-name: move_to_circle;
+            -o-animation-duration: 5s;
+            -o-animation-timing-function: linear;
+            -o-animation-delay: 0s;
+            -o-animation-iteration-count: infinite;
+            -o-animation-direction: alternate;
+            -o-animation-play-state: running;
+        }
+        .footer{
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        .div_wifi{
+            position: relative;
+            background-color: #31313B;
+            height: 200px;
+            clear: both;
+            text-align: center;
+        }
+        /*wifi 动画 -----开始*/
+        .wifi-symbol {
+            display: none;
+        }
+        .wifi-symbol {
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin-top: -106.5px;
+            -ms-transform: rotate(-45deg) ;
+            -moz-transform: rotate(-45deg) ;
+            -o-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        .wifi-symbol .wifi-circle {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 21.42857px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-color: #FFFFCC;
+            border-style: solid;
+            border-width: 1em 1em 0 0;
+            -webkit-border-radius: 0 100% 0 0;
+            border-radius: 0 100% 0 0;
+            opacity: 0;
+            -o-animation: wifianimation 3s infinite;
+            -moz-animation: wifianimation 3s infinite;
+            -webkit-animation: wifianimation 3s infinite;
+            animation: wifianimation 3s infinite;
+        }
+        .wifi-symbol .wifi-circle.first {
+            -o-animation-delay: 800ms;
+            -moz-animation-delay: 800ms;
+            -webkit-animation-delay: 800ms;
+            animation-delay: 800ms;
+        }
+        .wifi-symbol .wifi-circle.second {
+            width: 5em;
+            height: 5em;
+            -o-animation-delay: 400ms;
+            -moz-animation-delay: 400ms;
+            -webkit-animation-delay: 400ms;
+            animation-delay: 400ms;
+        }
+        .wifi-symbol .wifi-circle.third {
+            width: 3em;
+            height: 3em;
+        }
+        .wifi-symbol .wifi-circle.fourth {
+            width: 1em;
+            height: 1em;
+            opacity: 1;
+            background-color: #FFFFCC;
+            -o-animation: none;
+            -moz-animation: none;
+            -webkit-animation: none;
+            animation: none;
+        }
+        /*WiFi动画-----结束*/
+
+        @-o-keyframes wifianimation {
+            0% {
+                opacity: 0.4; }
+            25% {
+                opacity: 1;
+            }
+            46% {
+                opacity: 0.1;
+            }
+            100% {
+                opacity: 0.1;
+            }
+        }
+        @-moz-keyframes wifianimation {
+            0% {
+                opacity: 0.4; }
+            25% {
+                opacity: 1; }
+            46% {
+                opacity: 0.1; }
+            100% {
+                opacity: 0.1; }
+        }
+        @-webkit-keyframes wifianimation {
+            0% {
+                opacity: 0.4; }
+            25% {
+                opacity: 1; }
+            46% {
+                opacity: 0.1; }
+            100% {
+                opacity: 0.1; }
+        }
+
     </style>
 </head>
 <body>
@@ -113,43 +291,27 @@
         为了得到最佳的浏览器支持，您应该始终定义 0% 和 100% 选择器。
     </p>
     <h3 class="text-left ">例子：</h3>
+    <p>案例一：无限循环转圈：</p>
     <div class="width-100 bg-yellow div_animation">
-        <span>转圈</span>
+        <img src="../transition/x2.jpg" alt="">
     </div>
-    <h3 class="text-left" style="margin-top: 200px">css:</h3>
-    <pre>
+    <p style="margin-top: 200px">案例二：圆形轨迹移动</p>
+    <div class="width-100 bg-yellow div_animation1">
 
-        @keyframes move_to_right {
-          0% {
-                transform: rotate(0deg);
-            }
-            25% {
-                transform: rotate(90deg);
-                background: #43ce7b;
-            }
-            50% {
-                transform: rotate(180deg);
-                background: #ff00bb;
-            }
-            55% {
-                transform: rotate(270deg);
-                background: #0f7595;
-            }
-            70% {
-                transform: rotate(360deg);
-                background: #0000AA;
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-        .div_animation:hover{
-            animation:move_to_right 5s;
-            -moz-animation:move_to_right 5s; /* Firefox */
-            -webkit-animation:move_to_right 5s; /* Safari and Chrome */
-            -o-animation:move_to_right 5s; /* Opera */
-        }
-    </pre>
+    </div>
+    <p style="margin-top: 200px">案例三：wifi动画</p>
+    <div class="div_wifi">
+        <div class="wifi-symbol">
+            <div class="wifi-circle first"></div>
+            <div class="wifi-circle second"></div>
+            <div class="wifi-circle third"></div>
+            <div class="wifi-circle fourth"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="text-left">copyright &copy;2017</p>
+    </div>
 </div>
 </body>
 </html>
