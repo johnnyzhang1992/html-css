@@ -16,8 +16,115 @@
 <body>
 <div class="content">
     <div class="item">
-
+        <p>实例1：绘制图像</p>
+        <canvas id="myCanvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
     </div>
+    <div class="item">
+        <p>实例2： 画线</p>
+        <canvas id="my1Canvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
+    </div>
+    <div class="item">
+        <p>实例3：画圆</p>
+        <canvas id="my2Canvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
+    </div>
+    <div class="item">
+        <p>实例4：文本（实心）</p>
+        <canvas id="my3Canvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
+    </div>
+    <div class="item">
+        <p>实例5：文本（空心）</p>
+        <canvas id="my4Canvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
+    </div>
+    <div class="item">
+        <p>实例6：渐变</p>
+        <canvas id="my5Canvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
+    </div>
+    <div class="item">
+        <p>实例7：图像</p>
+        <canvas id="my6Canvas" width="200" height="200"
+                style="border:1px solid #000000;">
+        </canvas>
+    </div>
+    <img src="scream.png" alt="" style="display: none" id="scream">
 </div>
 </body>
+<script>
+    // 绘图
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    ctx.fillStyle="#FF0000";
+    ctx.fillRect(0,0,200,200);
+
+    // 画线
+    var d=document.getElementById("my1Canvas");
+    var ctx_d=d.getContext("2d");
+    ctx_d.moveTo(10,10);
+    ctx_d.lineTo(190,100);
+    ctx_d.lineTo(10,100);
+    ctx_d.lineTo(10,10);
+    ctx_d.stroke();
+
+    // 画圆
+    var r=document.getElementById("my2Canvas");
+    var ctx_r=r.getContext("2d");
+    ctx_r.beginPath();
+    ctx_r.arc(100,100,100,0,2*Math.PI);
+    // 圆里面加个三角形
+    ctx_r.moveTo(100,0);
+    ctx_r.lineTo(200,100);
+    ctx_r.lineTo(0,100);
+    ctx_r.lineTo(100,0);
+    ctx_r.stroke();
+
+    // 文本-实心
+    var t=document.getElementById("my3Canvas");
+    var ctx_t=t.getContext("2d");
+    ctx_t.font="30px Arial";// 大小 字体
+    ctx_t.fillText("Hello World",10,50);//内容，坐标
+
+    // 文本-空心
+    var t1=document.getElementById("my4Canvas");
+    var ctx_t1=t1.getContext("2d");
+    ctx_t1.font="30px Arial";// 大小 字体
+    ctx_t1.strokeText("Hello World",10,50);//内容，坐标
+
+
+    // 渐变
+    var g=document.getElementById("my5Canvas");
+    var ctx_g=g.getContext("2d");
+    // 创建渐变
+    var grd=ctx_g.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    // 填充渐变
+    ctx_g.fillStyle=grd;
+    ctx_g.fillRect(10,10,190,50);
+
+    // 创建渐变
+    var grd1=ctx_g.createRadialGradient(100,100,10,100,100,100);//x0,y0,r0,x1,y1,r1
+    grd1.addColorStop(0,"red");
+    grd1.addColorStop(1,"white");
+
+    // 填充渐变
+    ctx_g.fillStyle=grd1;
+    ctx_g.fillRect(10,70,190,50);//x,y,w,h
+
+    // 填充图像
+    var m=document.getElementById("my6Canvas");
+    var ctx_m=m.getContext("2d");
+    var img=document.getElementById("scream");
+    ctx_m.drawImage(img,10,10,190,180,10,10,180,180);//img_elem,dx_or_sx,dy_or_sy,dw_or_sw,dh_or_sh,dx,dy,dw,dh
+</script>
 </html>
