@@ -24,7 +24,6 @@ HTML5 ```<canvas> ```元素用于图形的绘制，通过脚本 (通常是JavaSc
 <canvas id="myCanvas" width="200" height="100"
 style="border:1px solid #000000;">
 </canvas>
-
 ```
 ### 使用 JavaScript 来绘制图像
 canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成：
@@ -34,7 +33,6 @@ var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 ctx.fillStyle="#FF0000";
 ctx.fillRect(0,0,150,75);
-
 ```
 
 > 实例解析:
@@ -42,19 +40,16 @@ ctx.fillRect(0,0,150,75);
 首先，找到 ```<canvas>``` 元素:
 ```
 var c=document.getElementById("myCanvas");
-
 ```
 然后，创建 context 对象：
 ``` 
 var ctx=c.getContext("2d");
-
 ```
 getContext("2d") 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
 下面的两行代码绘制一个红色的矩形：
  ```
 ctx.fillStyle="#FF0000";
 ctx.fillRect(0,0,150,75);
-
 ```
 设置fillStyle属性可以是CSS颜色，渐变，或图案。fillStyle 默认设置是#000000（黑色）。
 fillRect(x,y,width,height) 方法定义了矩形当前的填充方式。
@@ -77,7 +72,6 @@ lineTo(x,y) 定义线条结束坐标
 在canvas中绘制圆形, 我们将使用以下方法:
 ```
 arc(x,y,r,start,stop)
-
 ```
 实际上我们在绘制圆形时使用了 "ink" 的方法, 比如 stroke() 或者 fill().
 
@@ -94,7 +88,6 @@ var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 ctx.font="30px Arial";
 ctx.fillText("Hello World",10,50);
-
 ```
 ### Canvas - 渐变
 渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。
@@ -118,12 +111,10 @@ grd.addColorStop(1,"white");
 // 填充渐变
 ctx.fillStyle=grd;
 ctx.fillRect(10,10,150,80);
-
 ```
 
 ### Canvas - 图像
 把一幅图像放置到画布上, 使用以下方法:
 ````
 drawImage(image,x,y)
-
 ````
