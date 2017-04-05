@@ -118,3 +118,6 @@ ctx.fillRect(10,10,150,80);
 ````
 drawImage(image,x,y)
 ````
+> 更多参考：
+
+http://www.runoob.com/tags/ref-canvas.html
