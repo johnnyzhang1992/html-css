@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Style Demo</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        .header,.footer{
+            color: #fff;
+            padding: 20px 0;
+            background-color: #0f7595;
+        }
+        .container{
+            color: #fff;
+            display: flex;
+            overflow: hidden;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        .left,.right{
+            flex: 1;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .middle{
+            padding: 50px 0;
+            text-align: center;
+        }
+        .left{
+            background-color: #0000AA;
+            height: 200px;
+        }
+        .middle{
+            width: 400px;
+            background-color: #3C323A;
+        }
+        .right{
+            background-color: #6600ff;
+        }
+    </style>
+</head>
+<body>
+<div class="demo1">
+    <h1 class="h1">demo1 normal flex layout</h1>
+    <div class="header">header</div>
+    <h2>align-items: stretch</h2>
+    <div class="container">
+        <div class="left">height:200px</div>
+        <div class="middle">width:400px</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</div>
+
+</body>
+</html>
