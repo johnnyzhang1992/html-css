@@ -37,6 +37,12 @@ a,b,strong,span,img,label,button,input,select,textarea
  img,input
 ```
 
+## table-cell
+
+- table-cell 两侧相同高度，可以垂直居中显示;
+- margin 属性无效；
+- padding 有效
+
 ## 行内元素与块状元素的转换
 
 float,position,display

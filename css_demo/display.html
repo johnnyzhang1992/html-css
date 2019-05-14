@@ -36,8 +36,8 @@
             display: inline-block;
         }
         .display_item .inline,.display_item .inline_block{
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             margin: 10px;
             padding: 10px;
             background: #ddd;
@@ -60,8 +60,8 @@
             position: fixed;
             right: 0;
             top: 50%;
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             transform: translate(0,-50%);
         }
         .clearfix:after {
@@ -103,7 +103,19 @@
         </div>
         <div class="display_item">
             <p class="p_fixed">p || position:fixed</p>
-            <div></div>
+            <div style="clear: both"></div>
+        </div>
+        <!-- table -->
+        <div class="display_item">
+            <div class="table" style="display: table">table</div>
+            <div style="display: table-caption">table-caption</div>
+            <div style="display: table-row">test1</div>
+            <div>normal</div>
+            <p>table-cell 两侧相同高度，可以垂直居中显示;margin 属性无效；设置 height 后 padding 有效，否则无效</p>
+            <div class="cell" style="display:block">
+                <div style="display: table-cell;vertical-align: middle;height: 50px;margin-right: 20px;background: yellow;padding: 15px">table cell height: 50px</div>
+                <div style="display: table-cell;vertical-align: middle;background: red;padding: 10px 15px;">cell right</div>
+            </div>
         </div>
     </div>
 </body>
