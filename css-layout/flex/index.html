@@ -3,6 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>网页布局之Flex 布局</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0
+        }
+        .content{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .box{
+            display: flex;
+            justify-content: center
+        }
+        .box .item{
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: #ddd;
+            border: 1px solid red
+        }
+        pre{
+            background: #eee
+        }
+    </style>
 </head>
 <body>
 <div class="content">
@@ -83,7 +108,8 @@
             <div class="area">
                 <div class="demo">
                     <div class="box center-center">
-                        <div class="item"></div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
                     </div>
                 </div>
                 <div class="code">
