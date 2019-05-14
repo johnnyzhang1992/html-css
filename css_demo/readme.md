@@ -17,9 +17,10 @@ header,form,ul,ol,table,article,div,hr,aside,figure,canvas,video,audio,footer
 ## inline 行内元素的默认值。
 
 - 可以多个标签存在一行，对宽高属性值不生效，完全靠 **内容** 撑开宽高。
-- 对 margin-top 和 margin-botton 属性不生效。
-- padding 属性生效
-- 行内元素居中 `text-align: center`
+- 行内元素 margin-top 和 margin-botton 属性不生效。
+- 块级元素可以设置weith和height，行内元素设置width和height无效，而且块级元素即使设置宽度也还是独占一行。注意但块级元素当没有明确指定 width 和 height 值时，块级元素尺寸由内容确定，当指定了 width 和 height 的值时，内容超出块级元素的尺寸就会溢出，这时块级元素要呈现什么行为要看其 overflow 的值（visible,hidden,overflow,scroll)
+- 行内元素的padding-top和padding-bottom会起作用，不过就像脱离了标准流一样（即padding-left和padding-right的层级比其他元素高），并不会占据位置，并且还把其他元素给盖住了。但是，假如inline的元素没有内容，“padding-top、padding-bottom"将不起作用。如果想要起作用，只需要给padding-left或者padding-right设置一个值，或者当inline的元素有内容时就会起作用。
+- text-align 属性对块级元素起作用，对行内元素不起作用 `text-align: center`
 
 行内元素主要有：
 
@@ -39,9 +40,17 @@ a,b,strong,span,img,label,button,input,select,textarea
 
 ## table-cell
 
+同级元素使用 table-cell
+
 - table-cell 两侧相同高度，可以垂直居中显示;
 - margin 属性无效；
 - padding 有效
+
+父元素使用 table-cell
+
+- 父元素使用 table-cell，vertical-align:  middle;
+- 子元素设置 display:inline-block;vertical-align:middle;
+- 子元素等高且垂直居中
 
 ## 行内元素与块状元素的转换
 

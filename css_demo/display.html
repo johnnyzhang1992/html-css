@@ -85,6 +85,7 @@
             <!-- inline -->
             <span class="inline">span 1 | float:left </span>
             <span class="inline">span 2 </span>
+            <span class="inline"></span>
             <span class="inline">span 3 </span>
         </div>
         <h2>display: inline-block</h2>
@@ -107,7 +108,9 @@
         </div>
         <!-- table -->
         <div class="display_item">
-            <div class="table" style="display: table">table</div>
+            <div class="table" style="display: table">
+            <div>table</div>
+            </div>
             <div style="display: table-caption">table-caption</div>
             <div style="display: table-row">test1</div>
             <div>normal</div>
@@ -116,6 +119,11 @@
                 <div style="display: table-cell;vertical-align: middle;height: 50px;margin-right: 20px;background: yellow;padding: 15px">table cell height: 50px</div>
                 <div style="display: table-cell;vertical-align: middle;background: red;padding: 10px 15px;">cell right</div>
             </div>
+            <p>父元素使用 table-cell，vertical-align:  middle; 子元素 div 设置 display: inline-block;vertical-align:  middle</p>
+            <div class="cell" style="display: table-cell;">
+                    <div style="display:inline-block;vertical-align:  middle;margin-right: 20px;background: yellow;padding: 15px">table cell height: 50px</div>
+                    <div style="display: inline-block;vertical-align: middle;background: red;padding: 10px 15px;">cell right</div>
+                </div>
         </div>
     </div>
 </body>
