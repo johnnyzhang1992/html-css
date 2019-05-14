@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            padding: 20px;
+            width: 75%;
+            margin: 0 auto;
+        }
+        .display_item{
+            padding: 15px;
+            text-align: center;
+            overflow: hidden; /* BFC */
+            position:relative;
+        }
+        .display_item .inline{
+            display: inline;
+        }
+        .display_item .inline:first-child{
+            float: left;/* 行内元素 转换为 行内块元素*/
+        }
+        .display_item .inline:last-child{
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+        .display_item .inline_block{
+            display: inline-block;
+        }
+        .display_item .inline,.display_item .inline_block{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            background: #ddd;
+            border: 1px solid red
+        }
+        .display_item p{
+            padding: 15px;
+            background: #eee;
+            border: 1px solid red;
+        }
+        .p_float{
+            float: left;
+        }
+        .p_position{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .p_fixed{
+            position: fixed;
+            right: 0;
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            transform: translate(0,-50%);
+        }
+        .clearfix:after {
+            content:".";
+            display:block;
+            height:0;
+            visibility:hidden;
+            clear:both;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>说明：display:inline 为行内元素；display:inlibe-block 为行内块元素，两者有区别。</p>
+        <p></p>
+        <h2>display: inline</h2>
+        <div class="display_item">
+            <!-- inline -->
+            <span class="inline">span 1 | float:left </span>
+            <span class="inline">span 2 </span>
+            <span class="inline">span 3 </span>
+        </div>
+        <h2>display: inline-block</h2>
+        <div class="display_item">
+            <!-- inline block -->
+            <span class="inline_block">span  1</span>
+            <span class="inline_block">span  2</span>
+            <span class="inline_block">span  3</span>
+        </div>
+        <div class="display_item">
+            <p class="p_float">p || float:left</p>
+
+        </div>
+        <div class="clearfix" style="position: relative;">
+            <p class="p_position">p || position:absolute</p>
+        </div>
+        <div class="display_item">
+            <p class="p_fixed">p || position:fixed</p>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
