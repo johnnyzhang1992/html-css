@@ -24,7 +24,7 @@
         .display_item .inline{
             display: inline;
         }
-        .display_item .inline:first-child{
+        .display_item .inline.left{
             float: left;/* 行内元素 转换为 行内块元素*/
         }
         .display_item .inline:last-child{
@@ -83,7 +83,8 @@
         <h2>display: inline</h2>
         <div class="display_item">
             <!-- inline -->
-            <span class="inline">span 1 | float:left </span>
+            <span class="inline">span 2 </span>
+            <span class="inline left">span 1 | float:left </span>
             <span class="inline">span 2 </span>
             <span class="inline"></span>
             <span class="inline">span 3 </span>
